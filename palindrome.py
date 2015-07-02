@@ -2,11 +2,11 @@
 
 def is_palindrome(num):
     num_string = str(num)
-    reversed_num_string = num_string[-1::-1]
+    reversed_num_string = num_string[::-1]
     return num_string[:len(num_string)/2] == reversed_num_string[:len(reversed_num_string)/2]
 
 def process(num):
-    return num + int(str(num)[-1::-1])
+    return num + int(str(num)[::-1])
 
 def find_palindrome(num, max_steps=10000):
     steps = 0
@@ -24,7 +24,7 @@ def find_palindrome(num, max_steps=10000):
 lychrel = []
 palindromes = []
 
-for num in xrange(1,1000):
+for num in xrange(1, 1000):
     (pal, steps) = find_palindrome(num)
     if pal:
         print "%d gets palindromic after %d steps: %d" % (num, steps, pal)
