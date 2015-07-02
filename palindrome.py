@@ -21,3 +21,17 @@ def find_palindrome(num, max_steps=10000):
         return (None, steps)
 
 
+lychrel = []
+palindromes = []
+
+for num in xrange(1,1000):
+    (pal, steps) = find_palindrome(num)
+    if pal:
+        print "%d gets palindromic after %d steps: %d" % (num, steps, pal)
+        palindromes += [pal]
+    else:
+        print "%d may be a Lychrel number - not palindromic after %d steps" % (num, steps)
+        lychrel += [num]
+
+print "Found %d total possible Lychrel numbers:" % (len(lychrel))
+print lychrel
